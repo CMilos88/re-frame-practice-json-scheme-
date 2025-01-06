@@ -6,9 +6,6 @@
             ))
   
 
-
-
-
 (defn basic-table []
   (let [results @(rf/subscribe [:results])]
     [:> TableContainer {:component Paper :sx {:margin-top "2.5em"}}

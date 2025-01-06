@@ -12,9 +12,10 @@
  (def initial-form-data {:number 2.14
                          :integer 45
                          :numberEnum 1
+                         :numberEnumRadio 2
                          :integerRange -13
                          :integerRangeSteps 60
-                         :numberEnumRadio 2})
+                         })
 
   (rf/reg-event-db
    :initialize
