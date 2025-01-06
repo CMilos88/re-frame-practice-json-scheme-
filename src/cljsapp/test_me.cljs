@@ -40,6 +40,17 @@
  (fn [db [_ result]]
    (update db :results conj result)
    ))
+  
+  (rf/reg-event-db
+   :delete-table-result
+   (fn [db [_ index-to-delete]]
+     (update db :results
+             (fn [results]
+               (vec (keep-indexed (fn [idx item]
+                                    (when (not= idx index-to-delete)
+                                      item))
+                                  results))))))
+
 
   
   (def CustomForm (withTheme Theme))
